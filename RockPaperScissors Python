@@ -1,0 +1,32 @@
+import random
+
+choices = ("Rock", "Paper", "Scissors")
+player_name = input('What is your name?')
+computer_hand = random.choice(choices)
+print(choices)
+player_hand = input("What is your choice " + player_name)
+while True:
+    if player_hand == computer_hand:
+        print("It is a tie " + player_name)
+    elif player_hand == "Rock":
+        if computer_hand == "Scissors":
+            print("You won " + player_name)
+        else:
+            print("you lost " + player_name)
+    elif player_hand == "Scissors":
+        if computer_hand == "Paper":
+            print("You won " + player_name)
+        else:
+            print("you lost " + player_name)
+    elif player_hand == "Paper":
+        if computer_hand == "rock":
+            print("You won " + player_name)
+        else:
+            print("you lost " + player_name)
+    stop_or_No = input("Would you like to stop? Yes or No " + player_name)
+    if stop_or_No == "Yes":
+        break
+    if stop_or_No == "No":
+        print("Alr")
+        computer_hand = random.choice(choices)
+        player_hand = input("What is your choice " + player_name)
